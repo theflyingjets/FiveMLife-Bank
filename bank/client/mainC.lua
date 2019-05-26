@@ -161,3 +161,18 @@ function notify(string)
     AddTextComponentString(string)
     DrawNotification(true, false)
 end
+
+-- Display Icons on the map
+Citizen.CreateThread(function()
+	if showblips then
+	  for k,v in ipairs(banks)do
+		local blip = AddBlipForCoord(v.x, v.y, v.z)
+		SetBlipSprite(blip, v.id)
+		SetBlipScale(blip, 1.0)
+		SetBlipAsShortRange(blip, true)
+		BeginTextCommandSetBlipName("STRING")
+		AddTextComponentString(tostring(v.name))
+		EndTextCommandSetBlipName(blip)
+	  end
+	end
+end)

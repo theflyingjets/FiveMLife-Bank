@@ -7,15 +7,17 @@ AddEventHandler("bank:balance", function()
 
     print("bank:balance works!!!")
 
-    -- MySQL.Async.fetchAll("SELECT * FROM banktabel",{}, 
-    -- function(result)
-    --         local source = src
-    --         local sendid = result[1].id
-    --         local sendfn = result[1].firstName
-    --         local sendln = result[1].lastName
-    --         local sendbal = result[1].bankMoney
-    --         TriggerClientEvent("bank:SData", source, sendid, sendfn, sendln, sendbal)
-    -- end) 
+    MySQL.Async.fetchAll("SELECT * FROM banktabel",{}, 
+    function(result)
+            local source = src
+            local sendid = result[1].id
+            local sendfn = result[1].firstName
+            local sendln = result[1].lastName
+            local sendbal = result[1].balance
+            local sendACNum = result[1].UID
+            print(source, sendid, sendfn, sendln, sendbal, sendACNum)
+            -- TriggerClientEvent("bank:SData", source, sendid, sendfn, sendln, sendbal)
+    end) 
 end)
 
 function PlayerIdentifier(type, id)
