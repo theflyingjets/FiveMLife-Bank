@@ -93,6 +93,7 @@
 
     RegisterCommand("debug", function()
         TriggerServerEvent('bank:balance')
+        -- SetNuiFocus(true, true)
     end)
 
 
@@ -106,7 +107,7 @@
         
             if IsControlJustPressed(1, 38) then
                 bankDisplay = true
-                SetNuiFocus(true, true)
+                -- SetNuiFocus(true, true)
                 SendNUIMessage({type = 'openBankMenu'})
                 TriggerServerEvent('bank:balance')
                 local ped = GetPlayerPed(-1)
@@ -114,9 +115,9 @@
         end
             
         if IsControlJustPressed(1, 322) then
-          inMenu = false
+          bankDisplay = false
           SetNuiFocus(false, false)
-          SendNUIMessage({type = 'closeBankMenu'})
+          SendNUIMessage({type = "ui",display = false})
         end
         end
       end)
@@ -148,6 +149,17 @@ function atATM()
 			return true
 		end
 	end
+end
+
+-- Gets data from server
+RegisterNetEvent("bank:SData")
+AddEventHandler("bank:SData", function(id, firstName, lastName, balance, Anum)
+      -- chatMessage(firstName)
+      SendNUIMessage({type = "ui",display = true,fName = firstName,lName = lastName,bal = balance,acNumber = Anum})
+end)
+
+function chatMessage(msg)
+  TriggerEvent("chatMessage", "", {0,255,0}, msg)
 end
 
 function DisplayHelpText(str)

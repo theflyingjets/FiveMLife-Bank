@@ -6,26 +6,31 @@ $(function(){
 			var item = event.data;
 			var fnTData = event.data.fName;
 			var lnTData = event.data.lName;
-			var BTData = event.data.birth;
-			var STData = event.data.sE;
-			var IDTData = event.data.Num;
-			var HTData = event.data.hgt;
-
+			var BalTData = event.data.bal;
+			var AcTData = event.data.acNumber;
+			
 			if (item !== undefined && item.type === "ui") {
 				$('.fnData').html(fnTData);
 				$('.lnData').html(lnTData);
-				$('.Bdata').html(BTData);
-				$('.SData').html(STData);
-				$('.IDData').html(IDTData);
-				$('.hData').html(HTData);
+				$('.Baldata').html(BalTData);
+				$('.AcData').html(AcTData);
                 /* if the display is true, it will show */
 				if (item.display === true) {
-					$("#container").show();
+					$(".hidden").show();
                      /* if the display is false, it will hide */
-				} else{
-                    $("#container").hide();
+				} else {
+					$(".hidden").hide();
 				}
 			}
 		});
 	};
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+	(document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+	  $notification = $delete.parentNode;
+	  $delete.addEventListener('click', () => {
+		$notification.parentNode.removeChild($notification);
+	  });
+	});
+  });

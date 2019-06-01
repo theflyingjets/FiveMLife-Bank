@@ -16,7 +16,7 @@ AddEventHandler("bank:balance", function()
             local sendbal = result[1].balance
             local sendACNum = result[1].UID
             print(source, sendid, sendfn, sendln, sendbal, sendACNum)
-            -- TriggerClientEvent("bank:SData", source, sendid, sendfn, sendln, sendbal)
+            TriggerClientEvent("bank:SData", source, sendid, sendfn, sendln, sendbal, sendACNum)
     end) 
 end)
 

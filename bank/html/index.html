@@ -1,20 +1,124 @@
-<html>
-	<head>
-		<link rel="stylesheet" href="reset.css" type="text/css">
-		<link rel="stylesheet" href="style.css" type="text/css">
-		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
-		<script src="./listener.js" type="text/javascript"></script>
-	</head>
-	<body>
-		<div id="container">
-				<div id="inline">
-					<p id="lname">lN <a class="lnData"></a></p>
-					<p id="fname">fN <a class="fnData"></a></p>
-					<p id="dob">DOB <a class="BData"></a></p>
-					<p id="sex">Sex <a class="SData"></a></p>
-					<p id="hgt">HGT <a class="hData"></a></p>
-					<p id="licenses">DD <a class="IDData"></a></p>
+<html class="hidden has-background-Maze">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+	<script src="./listener.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="bulma.css" type="text/css">
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<div class="container hidden has-background-light">
+	<nav class="level has-background-Top Top">
+			<div class="level-item has-text-centered">
+				<div>
+					<a class="heading has-text-white">Personal</a>
 				</div>
+			</div>
+			<div class="level-item has-text-centered">
+				<div>
+					<a class="heading has-text-white">Business (Coming Soon)</a>
+				</div>
+			</div>
+			<div class="level-item has-text-centered">
+				<div>
+					<a class="heading has-text-white">Investing (Coming Soon)</a>
+				</div>
+			</div>
+		</nav>
+
+	<!-- Company header -->
+	<nav class="navbar has-background-light " role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<a class="navbar-item">
+				<img class="logo" src="./assets/img/maze.png" width="223" height="51">
+			</a>
+
+			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</a>
 		</div>
-	</body>
+	</nav>
+	<!-- Alert -->
+
+	<div class="notification is-success ">
+			<button class="delete"></button>
+			<p class="alertText">Welcome <strong class="fnData"></strong>, you have logged in?</p>
+		</div>
+
+	<!-- Content -->
+
+	<section class="section">
+		<div class="container">
+
+			<div class="columns is-variable is-3">
+				<div class="column is-4">
+
+					<div class="card">
+						<header class="card-header">
+							<p class="card-header-title">
+								BANK ACCOUNTS
+							</p>
+							<p href="#" class="card-header-icon" aria-label="more options">
+								<p class="card-header-title is-uppercase">
+									Balance
+								</p>
+							</p>
+						</header>
+						<header class="card-header">
+								<p class="card-header-title">
+									TOTAL CHECKINGS:
+								</p>
+								<p href="#" class="card-header-icon" aria-label="more options">
+									<p class="card-header-title is-uppercase">
+										$
+										<a class="card-header-title is-uppercase Baldata">
+										</a>
+								</p>
+							</p>
+						</header>
+					</div>
+				</div>
+				<div class="column">
+
+						<div class="field has-addons">
+								<p class="control">
+								</p>
+								<p class="control">
+									<input class="input" type="text" placeholder="Amount of money">
+								</p>
+								<p class="control">
+									<a class="button">
+										Deposit
+									</a>
+								</p>
+							</div>
+
+							<div class="field has-addons">
+									<p class="control">
+									</p>
+									<p class="control">
+										<input class="input" type="text" placeholder="Amount of money">
+									</p>
+									<p class="control">
+										<a class="button">
+											Withdraw
+										</a>
+									</p>
+								</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+	<!-- End of Content -->
+</div> -->
+
 </html>
